@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import AgitationComponent from "./components/AgitationComponent/AgitationComponent";
 import PlayerComponent from "./components/PlayerComponent/PlayerComponent";
