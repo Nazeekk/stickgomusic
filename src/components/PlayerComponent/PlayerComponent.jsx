@@ -17,7 +17,7 @@ const PlayerComponent = ({
   };
   const skipSong = (isNext) => {
     audioElem.current.currentTime = 0;
-
+    currentSong.progress = 0;
     setPlaying(false);
     const index = songs.findIndex((x) => x.title === currentSong.title);
     const limit = isNext ? songs.length - 1 : 0;
@@ -39,12 +39,30 @@ const PlayerComponent = ({
       PlayPause();
     }
   };
+
+  const timeConvert = (totalSeconds) => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = Math.floor(totalSeconds - minutes * 60);
+    const strMinutes = isNaN(minutes) ? "00" : `0${minutes}`;
+    const strSeconds = isNaN(seconds)
+      ? "00"
+      : seconds < 10
+      ? `0${seconds}`
+      : seconds;
+    const time = `${strMinutes}:${strSeconds}`;
+    return time;
+  };
+
   return (
     <article className="player">
       <h1>StickGo</h1>
       <div className="player-container">
         <div className="song-image"></div>
         <span className="song-name">{currentSong.title}</span>
+        <div className="song-time-wrapper">
+          <p className="song-time">{timeConvert(currentSong.ct)}</p>
+          <p className="song-time">{timeConvert(currentSong.length)}</p>
+        </div>
         <div className="seek-bar" onClick={checkWidth} ref={clickRef}>
           <div
             className="seek-bar__inner"

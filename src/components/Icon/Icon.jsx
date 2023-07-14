@@ -68,7 +68,8 @@ const Icon = ({ type, onClickIcon }) => {
             />
           </svg>
         );
-    }
+			default: <h1><mark>Введи йобаний тайп для айтема</mark></h1>
+			}
   };
 
   return (

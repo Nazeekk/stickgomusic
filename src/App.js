@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./App.css";
 import AgitationComponent from "./components/AgitationComponent/AgitationComponent";
 import PlayerComponent from "./components/PlayerComponent/PlayerComponent";
 
-const songs = [
+const songsList = [
   {
     title: "FS 2",
     src: "/music/FS 2.mp3",
@@ -36,13 +35,15 @@ const songs = [
     title: "Final piece of music shit",
     src: "/music/Final piece of music shit.mp3",
   },
-  {
-    title: "Шампіньйони",
-    src: "/music/Шампіньйони.mp3",
-  },
+  // {
+  //   title: "Шампіньйони",
+  //   src: "/music/Шампіньйони.mp3",
+  // },
 ];
 
 function App() {
+  // eslint-disable-next-line
+  const [songs, setSongs] = useState(songsList);
   const [isPlaying, setPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(songs[0]);
 
@@ -60,11 +61,12 @@ function App() {
       ...currentSong,
       progress: (ct / duration) * 100,
       length: duration,
+      ct: ct,
     });
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <AgitationComponent />
       <audio src={currentSong.src} ref={audioElem} onTimeUpdate={onPlaying} />
       <PlayerComponent

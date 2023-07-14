@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+a,
+button,
+time {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+.agitation h2 {
+  font-size: 20px;
+}
+
+.agitation p {
+  font-size: 16px;
+}
+
+button {
+  background-color: #d9d9d9;
+  color: #2a2a2a;
+  border: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 12px 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+body {
+  background-color: #2a2a2a;
+}
+
+.agitation {
+  margin: 40px auto 0 auto;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  padding: 0 35px;
+}
+
+p {
+  padding-top: 15px;
+}
+
+.agitation__button {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.player {
+  width: 100%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.player h1 {
+  font-weight: 700;
+  font-size: 45px;
+  color: #d9d9d9;
+  line-height: 1;
+}
+
+.player-container {
+  padding-top: 20px;
+}
+
+.song-image {
+  width: 128px;
+  height: 128px;
+  background: #d9d9d9;
+  margin: 0 auto;
+}
+
+.song-name {
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 15px;
+  font-weight: 700;
+}
+
+audio {
+  display: block;
+  margin: 20px auto;
+}
+
+.player-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  gap: 40px;
+}
+
+.song-time-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .song-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .player h1 {
+    font-size: 55px !important;
+  }
+}
